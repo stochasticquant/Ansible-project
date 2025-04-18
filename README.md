@@ -1,3 +1,3 @@
 # Ansible-project
 
-Use of Ansible with Azure deployments
+Use of Ansible to configure linux VM's
