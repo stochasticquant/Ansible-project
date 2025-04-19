@@ -3,19 +3,16 @@
   become: true
   tasks:
 
-  - Name: update repository index
+  - name: update repository index
     apt:
       update_cache: yes
 
-  - Name: uninstall apache2 package
+  - name: uninstall apache2 package
     apt:
       name: apache2
-      state: absent 
-
-  - Name: remove php support for apache
-    apt:
-      Name: libapache2-mod-php
       state: absent
-      
-      
-       
+
+  - name: remove php support for apache
+    apt:
+      name: libapache2-mod-php
+      state: absent
