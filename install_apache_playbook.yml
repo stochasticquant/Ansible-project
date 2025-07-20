@@ -16,3 +16,17 @@
     apt:
       name: libapache2-mod-php
       state: latest
+
+  - name: deploy bio website
+    copy:
+      src: "{{ playbook_dir }}/bio-website/index.html"
+      dest: /var/www/html/index.html
+      owner: root
+      group: root
+      mode: '0644'
+
+  - name: ensure apache2 is started
+    service:
+      name: apache2
+      state: started
+      enabled: yes
